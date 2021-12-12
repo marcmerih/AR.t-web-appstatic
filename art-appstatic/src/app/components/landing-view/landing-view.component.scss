@@ -1,0 +1,46 @@
+.landing-view {
+    z-index: 1;
+
+    #gallery-video {
+        position: fixed;
+        right: 0;
+        bottom: 0;
+        min-width: 100%;
+        min-height: 100%;
+        filter: blur(0px);
+    }
+
+    .content {
+        position: fixed;
+        height: 70vh;
+        bottom: 0;
+        background-image: linear-gradient(to bottom, rgba(255,0,0,0), rgb(0, 0, 0));
+        color: #f1f1f1;
+        width: 100%;
+        padding: 50px;
+        min-width: 300px;
+
+        h1 {
+            text-align: right;
+        }
+
+        button {
+            width: 25vw;
+            min-width: 250px;
+            height: 40px;
+            border: none;
+            border-radius: 5px;
+            position: fixed;
+            right: 50px;
+            margin-top: 50px;
+            transition: color, background 0.4s ease-in;
+        }
+
+        button:hover {
+            transition: color, background 0.4s ease-in;
+            background: none;
+            border: 1px solid white;
+            color: white;
+        }
+    }
+}

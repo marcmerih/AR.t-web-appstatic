@@ -1,0 +1,19 @@
+.header {
+    .logo {
+        position: fixed;
+        padding: 50px;
+        height: 25vh;
+        z-index: 10;
+    }
+}
+.nav {
+    position: fixed;
+    padding: 80px;
+    padding-right: 50px;
+    z-index: 10;
+    right: 0;
+
+    span {
+        margin-left: 40px;
+    }
+}
