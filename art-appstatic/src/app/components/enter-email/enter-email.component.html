@@ -1,5 +1,22 @@
-<div class="container">
-    <mat-form-field>
-        <input placeholder="Enter email address...">
-    </mat-form-field>
+<div class="col-md-12 container justify-content-center align-items-center">
+    <mat-icon class="close-icon" (click)="closeDialog()">close</mat-icon>
+    <div class="d-flex align-items-center justify-content-center h-100" *ngIf="!hasSubmittedSuccessfully">
+        <div class="d-flex flex-column inner-container" [formGroup]="emailForm">
+            <mat-form-field appearance="outline">
+                <mat-label>Enter email address...</mat-label>
+                <input matInput [formControl]="emailFormControl" [required]="isRequired" autofocus="false">
+                <mat-error *ngIf="emailFormControl.hasError('required')">Please enter an address.</mat-error>
+                <mat-error *ngIf="emailFormControl.hasError('email')">Please enter a valid address.</mat-error>
+                <mat-error *ngIf="emailFormControl.hasError('alreadyExists')">Email already exists!</mat-error>
+            </mat-form-field>
+            <input style="visibility: hidden;" formControlName="gateKeeper">
+            <button type="submit" *ngIf="emailFormControl.valid" (click)="submitEmail()" class="submit-btn">Submit</button>
+        </div>
+    </div>
+    <div class="d-flex align-items-center justify-content-center h-100" *ngIf="hasSubmittedSuccessfully">
+        <div class="d-flex flex-column inner-container" [formGroup]="emailForm">
+            <h1 style="color: white;">Thank you for signing up. Keep an eye on your emails!</h1>
+            <p style="color: white;">In the meantime, follow us on <a href="https://www.instagram.com/ar.t.app/" style="color: #4ef0c9;">Instagram</a>!</p>
+        </div>
+    </div>
 </div>

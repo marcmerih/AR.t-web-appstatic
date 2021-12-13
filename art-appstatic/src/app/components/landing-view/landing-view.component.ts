@@ -3,6 +3,7 @@ import { AngularFireDatabase, AngularFireList } from 'angularfire2/database';
 import { Observable } from 'rxjs';
 import { MatDialog } from '@angular/material/dialog';
 import { EnterEmailComponent } from '../enter-email/enter-email.component';
+import { PrivacyComponent } from '../privacy/privacy.component';
 
 @Component({
   selector: 'app-landing-view',
@@ -11,17 +12,26 @@ import { EnterEmailComponent } from '../enter-email/enter-email.component';
 })
 export class LandingViewComponent implements OnInit {
   data: Observable<any>[] = [];
-  constructor(private database: AngularFireDatabase, private dialog: MatDialog) { }
+  constructor(private dialog: MatDialog) { }
 
   ngOnInit(): void {
   }
 
   enterEmail(): void {
-    this.dialog.open(EnterEmailComponent, {
+    const dialog = this.dialog.open(EnterEmailComponent, {
       maxWidth: '100vw',
       maxHeight: '100vh',
       height: '100%',
       width: '100%'
     });
+  }
+
+  openPrivacy(): void {
+    const dialogPrivacy = this.dialog.open(PrivacyComponent, {
+      maxWidth: '100vw',
+      maxHeight: '100vh',
+      height: '100%',
+      width: '100%'
+    })
   }
 }
