@@ -4,6 +4,7 @@
         padding: 50px;
         height: 25vh;
         z-index: 10;
+        animation: swing 1s ease-in;
     }
 }
 .nav {
@@ -15,5 +16,25 @@
 
     span {
         margin-left: 40px;
+    }
+}
+
+@keyframes swing {
+    0% {
+        opacity: 0;
+        position: absolute;
+        left: -70px;
+    }
+
+    70% {
+        opacity: 0.1;
+        position: absolute;
+        left: -20px;
+    }
+
+    100% {
+        opacity: 1;
+        position: absolute;
+        left: 0px;
     }
 }

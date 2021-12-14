@@ -141,3 +141,24 @@
     border: 1px solid #4ef0c9;
     color: #4ef0c9;
 }
+
+#content-email {
+    opacity: 0;
+    animation: swing-content-email 0.6s ease-in;
+    animation-delay: 0.5s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes swing-content-email {
+    0% {
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 0.5;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
