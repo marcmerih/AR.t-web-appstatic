@@ -22,6 +22,10 @@
 
         h1 {
             text-align: right;
+            animation: swing-content 0.6s ease-in;
+            opacity: 0;
+            animation-delay: 1s;
+            animation-fill-mode: forwards;
         }
 
         button {
@@ -34,6 +38,10 @@
             right: 50px;
             margin-top: 50px;
             transition: color, background 0.4s ease-in;
+            animation: swing-content 0.6s ease-in;
+            opacity: 0;
+            animation-delay: 1.5s;
+            animation-fill-mode: forwards;
         }
 
         button:hover {
@@ -48,6 +56,24 @@
             right: 50px;
             margin-top: 80px;
             font-size: 10pt;
+            opacity: 0;
+            animation: swing-content 0.6s ease-in;
+            animation-delay: 2s;
+            animation-fill-mode: forwards;
         }
+    }
+}
+
+@keyframes swing-content {
+    0% {
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 0.5;
+    }
+
+    100% {
+        opacity: 1;
     }
 }
